@@ -6,4 +6,10 @@ function fetchImg(query, currentPage = 1, imgPerPage = 12) {
   return axios.get(`?key=${API_KEY}&image_type=photo&orientation=horizontal&q=${query}&page=${currentPage}&per_page=${imgPerPage}`).then(response => response.data.hits);
 }
 
-export default { fetchImg };
+
+const imagesApi = {
+  fetchImg,
+};
+
+export default imagesApi;
+// export default { fetchImg };

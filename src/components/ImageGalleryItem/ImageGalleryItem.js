@@ -14,3 +14,4 @@ const ImageGalleryItem = ({webformatUrl, tags, largeImageURL, imgClick}) =>{
 };
 
 export default ImageGalleryItem;
+

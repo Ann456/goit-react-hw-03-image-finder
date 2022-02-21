@@ -4,10 +4,9 @@ import ImageGallery from './ImageGallery';
 import Spinner from './Loader';
 import Modal from './Modal';
 import Searchbar from './Searchbar';
-
 import Api from './servises/api';
 
-class App extends Component{
+class App extends Component { 
   state = {
     showModal: false,
     pictureQuery: '',
@@ -72,25 +71,20 @@ class App extends Component{
             imgClick={this.getlargeImageURL}
           />
 
-          {this.state.loader && <Spinner/>}
-
-          <Button
+          {this.state.loader && <Spinner />}
+          
+          {this.state.pictureQuery && (
+            <Button
             btnLabel="Load more"
             handleClick={this.findImages}
             aria-label="Load more"
-          />
+          />)}
 
-
-          {/* <button type="button" onClick={this.toogleModal}> Открыть модалку</button> */}
           {this.state.showModal && (
             <Modal
-              onClose={this.toogleModal}
               src={this.state.largeImageURL}
               onClick={this.toogleModal}
-            >
-            
-            {/* <button type="button" onClick={this.toogleModal}>Закрыть</button> */}
-            </Modal>)}
+            />)}
            
         </div>
       );

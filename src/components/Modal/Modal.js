@@ -1,12 +1,15 @@
 import { Component } from 'react';
 import s from './Modal.module.css';
 import { createPortal } from 'react-dom';
-import {ReactComponent as CloseIcon} from '../image/cross.svg';
+import { ReactComponent as CloseIcon } from '../image/cross.svg';
 
 
 const modalRoot = document.querySelector('#modal-root');
 
 export default class Modal extends Component {
+    state = {
+        loader: false,
+    }
 
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown);
