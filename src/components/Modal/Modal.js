@@ -21,13 +21,13 @@ export default class Modal extends Component {
 
     handleKeyDown = e => {
         if (e.code === "Escape") {
-            this.props.onClose();
+            this.props.onClick();
         }
     };
 
     handleBackdrop = (e) => {
         if (e.currentTarget === e.target) {
-            this.props.onClose();
+            this.props.onClick();
         }
     };
     
